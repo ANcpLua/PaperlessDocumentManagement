@@ -1,0 +1,101 @@
+using Microsoft.EntityFrameworkCore;
+using PaperlessDocumentManagement.DataAccessLayer.Entities.Base;
+using PaperlessDocumentManagement.DataAccessLayer.Entities.Context;
+using PaperlessDocumentManagement.DataAccessLayer.Interfaces.Repositories;
+using System.Linq.Expressions;
+
+namespace PaperlessDocumentManagement.DataAccessLayer.Infrastructure.Repositories;
+
+public abstract class BaseRepository<TEntity> : IRepository<TEntity> 
+    where TEntity : BaseEntity
+{
+    protected readonly PaperlessDbContext Context;
+    protected readonly DbSet<TEntity> DbSet;
+
+    protected BaseRepository(PaperlessDbContext context)
+    {
+        Context = context;
+        DbSet = context.Set<TEntity>();
+    }
+
+    public virtual async Task<TEntity?> GetByIdAsync(
+        Guid id, 
+        CancellationToken cancellationToken = default)
+    {
+        return await DbSet.FindAsync([id], cancellationToken); // New collection expression syntax
+    }
+
+    public virtual async Task<IReadOnlyList<TEntity>> GetAllAsync(
+        Expression<Func<TEntity, bool>>? predicate = null,
+        Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>>? orderBy = null,
+        string? includeProperties = null,
+        CancellationToken cancellationToken = default)
+    {
+        IQueryable<TEntity> query = DbSet;
+
+        if (predicate is not null)
+            query = query.Where(predicate);
+
+        if (includeProperties is not null)
+        {
+            foreach (var includeProperty in includeProperties.Split
+                (new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries))
+            {
+                query = query.Include(includeProperty);
+            }
+        }
+
+        if (orderBy is not null)
+            return await orderBy(query).ToListAsync(cancellationToken);
+
+        return await query.ToListAsync(cancellationToken);
+    }
+
+    public virtual async Task<TEntity> AddAsync(
+        TEntity entity, 
+        CancellationToken cancellationToken = default)
+    {
+        ArgumentNullException.ThrowIfNull(entity);
+        await DbSet.AddAsync(entity, cancellationToken);
+        await Context.SaveChangesAsync(cancellationToken);
+        return entity;
+    }
+
+    public virtual async Task UpdateAsync(
+        TEntity entity, 
+        CancellationToken cancellationToken = default)
+    {
+        ArgumentNullException.ThrowIfNull(entity);
+        DbSet.Update(entity);
+        await Context.SaveChangesAsync(cancellationToken);
+    }
+
+    public virtual async Task DeleteAsync(
+        Guid id, 
+        CancellationToken cancellationToken = default)
+    {
+        var entity = await GetByIdAsync(id, cancellationToken);
+        if (entity is null)
+            throw new KeyNotFoundException($"Entity with ID {id} not found");
+
+        entity.IsDeleted = true;
+        await UpdateAsync(entity, cancellationToken);
+    }
+
+    // New in .NET 9: IAsyncEnumerable implementation with cancellation
+    public virtual async IAsyncEnumerable<TEntity> StreamAllAsync(
+        Expression<Func<TEntity, bool>>? predicate = null,
+        [EnumeratorCancellation] CancellationToken cancellationToken = default)
+    {
+        var query = DbSet.AsNoTracking();
+        
+        if (predicate is not null)
+            query = query.Where(predicate);
+
+        await foreach (var entity in query.AsAsyncEnumerable()
+            .WithCancellation(cancellationToken))
+        {
+            yield return entity;
+        }
+    }
+}

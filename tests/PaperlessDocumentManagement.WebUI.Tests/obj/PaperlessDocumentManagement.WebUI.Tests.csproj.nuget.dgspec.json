@@ -1,0 +1,355 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\anfh2\\swarc\\tests\\PaperlessDocumentManagement.WebUI.Tests\\PaperlessDocumentManagement.WebUI.Tests.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\anfh2\\swarc\\src\\PaperlessDocumentManagement.BusinessServices\\PaperlessDocumentManagement.BusinessServices.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\anfh2\\swarc\\src\\PaperlessDocumentManagement.BusinessServices\\PaperlessDocumentManagement.BusinessServices.csproj",
+        "projectName": "PaperlessDocumentManagement.BusinessServices",
+        "projectPath": "C:\\Users\\anfh2\\swarc\\src\\PaperlessDocumentManagement.BusinessServices\\PaperlessDocumentManagement.BusinessServices.csproj",
+        "packagesPath": "C:\\Users\\anfh2\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\anfh2\\swarc\\src\\PaperlessDocumentManagement.BusinessServices\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\anfh2\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net9.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net9.0": {
+            "targetAlias": "net9.0",
+            "projectReferences": {
+              "C:\\Users\\anfh2\\swarc\\src\\PaperlessDocumentManagement.DataAccessLayer\\PaperlessDocumentManagement.DataAccessLayer.csproj": {
+                "projectPath": "C:\\Users\\anfh2\\swarc\\src\\PaperlessDocumentManagement.DataAccessLayer\\PaperlessDocumentManagement.DataAccessLayer.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "all"
+        }
+      },
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
+          "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[12.0.1, )"
+            },
+            "FluentValidation": {
+              "target": "Package",
+              "version": "[11.8.0, )"
+            },
+            "Microsoft.Extensions.Logging.Abstractions": {
+              "target": "Package",
+              "version": "[7.0.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.100-rc.2.24474.11/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\anfh2\\swarc\\src\\PaperlessDocumentManagement.DataAccessLayer\\PaperlessDocumentManagement.DataAccessLayer.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\anfh2\\swarc\\src\\PaperlessDocumentManagement.DataAccessLayer\\PaperlessDocumentManagement.DataAccessLayer.csproj",
+        "projectName": "PaperlessDocumentManagement.DataAccessLayer",
+        "projectPath": "C:\\Users\\anfh2\\swarc\\src\\PaperlessDocumentManagement.DataAccessLayer\\PaperlessDocumentManagement.DataAccessLayer.csproj",
+        "packagesPath": "C:\\Users\\anfh2\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\anfh2\\swarc\\src\\PaperlessDocumentManagement.DataAccessLayer\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\anfh2\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net9.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net9.0": {
+            "targetAlias": "net9.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "all"
+        }
+      },
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.13, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.13, )"
+            },
+            "Minio": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "Npgsql.EntityFrameworkCore.PostgreSQL": {
+              "target": "Package",
+              "version": "[7.0.11, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.100-rc.2.24474.11/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\anfh2\\swarc\\src\\PaperlessDocumentManagement.WebUI\\PaperlessDocumentManagement.WebUI.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\anfh2\\swarc\\src\\PaperlessDocumentManagement.WebUI\\PaperlessDocumentManagement.WebUI.csproj",
+        "projectName": "PaperlessDocumentManagement.WebUI",
+        "projectPath": "C:\\Users\\anfh2\\swarc\\src\\PaperlessDocumentManagement.WebUI\\PaperlessDocumentManagement.WebUI.csproj",
+        "packagesPath": "C:\\Users\\anfh2\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\anfh2\\swarc\\src\\PaperlessDocumentManagement.WebUI\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\anfh2\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {
+              "C:\\Users\\anfh2\\swarc\\src\\PaperlessDocumentManagement.BusinessServices\\PaperlessDocumentManagement.BusinessServices.csproj": {
+                "projectPath": "C:\\Users\\anfh2\\swarc\\src\\PaperlessDocumentManagement.BusinessServices\\PaperlessDocumentManagement.BusinessServices.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "all"
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "dependencies": {
+            "Autofac.Extensions.DependencyInjection": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "Microsoft.AspNetCore.OpenApi": {
+              "target": "Package",
+              "version": "[7.0.13, )"
+            },
+            "Serilog.AspNetCore": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            },
+            "Serilog.Sinks.Console": {
+              "target": "Package",
+              "version": "[4.1.0, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.5.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[7.0.20, 7.0.20]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.win-x64",
+              "version": "[7.0.20, 7.0.20]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[7.0.20, 7.0.20]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[7.0.20, 7.0.20]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.100-rc.2.24474.11\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\anfh2\\swarc\\tests\\PaperlessDocumentManagement.WebUI.Tests\\PaperlessDocumentManagement.WebUI.Tests.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\anfh2\\swarc\\tests\\PaperlessDocumentManagement.WebUI.Tests\\PaperlessDocumentManagement.WebUI.Tests.csproj",
+        "projectName": "PaperlessDocumentManagement.WebUI.Tests",
+        "projectPath": "C:\\Users\\anfh2\\swarc\\tests\\PaperlessDocumentManagement.WebUI.Tests\\PaperlessDocumentManagement.WebUI.Tests.csproj",
+        "packagesPath": "C:\\Users\\anfh2\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\anfh2\\swarc\\tests\\PaperlessDocumentManagement.WebUI.Tests\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\anfh2\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net9.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net9.0": {
+            "targetAlias": "net9.0",
+            "projectReferences": {
+              "C:\\Users\\anfh2\\swarc\\src\\PaperlessDocumentManagement.WebUI\\PaperlessDocumentManagement.WebUI.csproj": {
+                "projectPath": "C:\\Users\\anfh2\\swarc\\src\\PaperlessDocumentManagement.WebUI\\PaperlessDocumentManagement.WebUI.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "all"
+        }
+      },
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
+          "dependencies": {
+            "Microsoft.NET.Test.Sdk": {
+              "target": "Package",
+              "version": "[17.7.1, )"
+            },
+            "Moq": {
+              "target": "Package",
+              "version": "[4.20.69, )"
+            },
+            "NUnit": {
+              "target": "Package",
+              "version": "[3.13.3, )"
+            },
+            "NUnit.Analyzers": {
+              "target": "Package",
+              "version": "[3.6.1, )"
+            },
+            "NUnit3TestAdapter": {
+              "target": "Package",
+              "version": "[4.4.2, )"
+            },
+            "coverlet.collector": {
+              "target": "Package",
+              "version": "[3.2.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.100-rc.2.24474.11/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
